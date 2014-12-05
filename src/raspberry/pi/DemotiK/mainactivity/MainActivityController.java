@@ -1,9 +1,10 @@
-package raspberry.pi.DemotiK.controller;
+package raspberry.pi.DemotiK.mainactivity;
 
 import android.view.View;
 import raspberry.pi.DemotiK.MainActivity;
-import raspberry.pi.DemotiK.model.AbstractModel;
-import raspberry.pi.DemotiK.view.AbstractView;
+import raspberry.pi.DemotiK.abstractclass.AbstractController;
+import raspberry.pi.DemotiK.abstractclass.AbstractModel;
+import raspberry.pi.DemotiK.abstractclass.AbstractView;
 
 /**
  * Created by fums on 05.12.14.

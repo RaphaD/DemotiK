@@ -3,9 +3,9 @@ package raspberry.pi.DemotiK;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import raspberry.pi.DemotiK.controller.MainActivityController;
-import raspberry.pi.DemotiK.model.MainActivityModel;
-import raspberry.pi.DemotiK.view.AbstractView;
+import raspberry.pi.DemotiK.abstractclass.AbstractView;
+import raspberry.pi.DemotiK.mainactivity.MainActivityController;
+import raspberry.pi.DemotiK.mainactivity.MainActivityModel;
 
 import java.util.Observable;
 

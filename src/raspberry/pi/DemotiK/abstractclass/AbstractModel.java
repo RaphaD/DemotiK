@@ -1,4 +1,4 @@
-package raspberry.pi.DemotiK.model;
+package raspberry.pi.DemotiK.abstractclass;
 
 import java.util.Observable;
 

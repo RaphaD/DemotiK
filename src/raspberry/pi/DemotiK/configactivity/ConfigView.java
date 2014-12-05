@@ -1,25 +1,24 @@
-package raspberry.pi.DemotiK.view;
+package raspberry.pi.DemotiK.configactivity;
 
 import android.os.Bundle;
 import raspberry.pi.DemotiK.R;
-import raspberry.pi.DemotiK.controller.DeviceController;
-import raspberry.pi.DemotiK.model.DeviceModel;
+import raspberry.pi.DemotiK.abstractclass.AbstractView;
 
 import java.util.Observable;
 
 /**
  * Created by fums on 05.12.14.
  */
-public class DeviceView extends AbstractView {
+public class ConfigView extends AbstractView {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.deviceactivity_layout);
+        setContentView(R.layout.configactivity_layout);
 
         initUIFromR();
 
-        DeviceController ctrl = new DeviceController(this, new DeviceModel());
+        ConfigController ctrl = new ConfigController(this, new ConfigModel());
     }
 
     @Override

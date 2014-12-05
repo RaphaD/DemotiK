@@ -1,4 +1,4 @@
-package raspberry.pi.DemotiK.view;
+package raspberry.pi.DemotiK.custommenu;
 
 import android.app.Activity;
 import android.view.LayoutInflater;

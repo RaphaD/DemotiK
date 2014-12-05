@@ -1,16 +1,15 @@
-package raspberry.pi.DemotiK.view;
+package raspberry.pi.DemotiK.ledactivity;
 
 import android.os.Bundle;
 import raspberry.pi.DemotiK.R;
-import raspberry.pi.DemotiK.controller.TorrentController;
-import raspberry.pi.DemotiK.model.TorrentModel;
+import raspberry.pi.DemotiK.abstractclass.AbstractView;
 
 import java.util.Observable;
 
 /**
  * Created by fums on 05.12.14.
  */
-public class TorrentView extends AbstractView {
+public class LedView extends AbstractView {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,7 +18,7 @@ public class TorrentView extends AbstractView {
 
         initUIFromR();
 
-        TorrentController ctrl = new TorrentController(this, new TorrentModel());
+        LedController ctrl = new LedController(this, new LedModel());
     }
 
     @Override

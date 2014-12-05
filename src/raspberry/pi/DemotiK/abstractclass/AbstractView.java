@@ -1,4 +1,4 @@
-package raspberry.pi.DemotiK.view;
+package raspberry.pi.DemotiK.abstractclass;
 
 import android.app.Activity;
 
