@@ -18,10 +18,10 @@ public class MainActivity extends AbstractView {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.mainactivity_layout);
 
+        initUIFromR();
+
         MainActivityController ctrl = new MainActivityController(this, new MainActivityModel());
         ctrl.initKeys();
-
-        initUIFromR();
     }
 
     @Override

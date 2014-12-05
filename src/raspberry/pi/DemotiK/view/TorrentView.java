@@ -17,9 +17,9 @@ public class TorrentView extends AbstractView {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.ledactivity_layout);
 
-        TorrentController ctrl = new TorrentController(this, new TorrentModel());
-
         initUIFromR();
+
+        TorrentController ctrl = new TorrentController(this, new TorrentModel());
     }
 
     @Override

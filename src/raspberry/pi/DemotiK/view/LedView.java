@@ -17,9 +17,9 @@ public class LedView extends AbstractView {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.ledactivity_layout);
 
-        LedController ctrl = new LedController(this, new LedModel());
-
         initUIFromR();
+
+        LedController ctrl = new LedController(this, new LedModel());
     }
 
     @Override

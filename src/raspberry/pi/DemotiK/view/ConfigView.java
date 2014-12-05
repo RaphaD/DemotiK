@@ -17,9 +17,9 @@ public class ConfigView extends AbstractView {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.configactivity_layout);
 
-        ConfigController ctrl = new ConfigController(this, new ConfigModel());
-
         initUIFromR();
+
+        ConfigController ctrl = new ConfigController(this, new ConfigModel());
     }
 
     @Override

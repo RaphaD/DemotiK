@@ -17,9 +17,9 @@ public class DeviceView extends AbstractView {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.deviceactivity_layout);
 
-        DeviceController ctrl = new DeviceController(this, new DeviceModel());
-
         initUIFromR();
+
+        DeviceController ctrl = new DeviceController(this, new DeviceModel());
     }
 
     @Override
