@@ -3,5 +3,6 @@
     <string name="app_name">DemotiK</string>
     <string name="led_name">Led controller</string>
     <string name="device_name">Device controller</string>
+    <string name="torrent_name">Torrent controller</string>
     <string name="option_name">Options</string>
 </resources>

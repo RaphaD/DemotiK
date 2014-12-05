@@ -1,24 +1,60 @@
 package raspberry.pi.DemotiK;
 
-import android.app.Activity;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.AdapterView;
-import android.widget.ListView;
-import android.widget.Toast;
-import raspberry.pi.DemotiK.vue.CustomMenu;
+import android.widget.Button;
+import raspberry.pi.DemotiK.controller.MainActivityController;
+import raspberry.pi.DemotiK.model.MainActivityModel;
+import raspberry.pi.DemotiK.view.AbstractView;
 
-public class MainActivity extends Activity {
-    ListView m_list;
-    String[] m_web = null;
-    Integer[] m_imageId = null;
+import java.util.Observable;
+
+public class MainActivity extends AbstractView {
+
+    Button switchLED, switchConfig, switchDevices, switchTorrent;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-
         super.onCreate(savedInstanceState);
         setContentView(R.layout.mainactivity_layout);
 
+        MainActivityController ctrl = new MainActivityController(this, new MainActivityModel());
+        ctrl.initKeys();
+
+        initUIFromR();
+    }
+
+    @Override
+    protected void initUIFromR() {
+        switchLED = (Button) findViewById(R.id.led);
+        switchDevices = (Button) findViewById(R.id.relay);
+        switchTorrent = (Button) findViewById(R.id.torrent);
+        switchConfig = (Button) findViewById(R.id.config);
+
+    }
+
+    public void addOnClickListenerSwitchLed(View.OnClickListener listener) {
+        switchLED.setOnClickListener(listener);
+    }
+
+    public void addOnClickListenerSwitchDevices(View.OnClickListener listener) {
+        switchDevices.setOnClickListener(listener);
+    }
+
+    public void addOnClickListenerSwitchTorrent(View.OnClickListener listener) {
+        switchTorrent.setOnClickListener(listener);
+    }
+
+    public void addOnClickListenerSwitchConfig(View.OnClickListener listener) {
+        switchConfig.setOnClickListener(listener);
+    }
+
+    @Override
+    public void update(Observable observable, Object data) {
+
+    }
+
+/*
         m_web = new String[]{
                 getString(R.string.app_name),
                 getString(R.string.led_name),
@@ -43,5 +79,5 @@ public class MainActivity extends Activity {
                 Toast.makeText(MainActivity.this, "You Clicked at " + m_web[+position], Toast.LENGTH_SHORT).show();
             }
         });
-    }
+*/
 }

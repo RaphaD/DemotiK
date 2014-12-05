@@ -1,4 +1,4 @@
-package raspberry.pi.DemotiK.vue;
+package raspberry.pi.DemotiK.view;
 
 import android.app.Activity;
 import android.view.LayoutInflater;
