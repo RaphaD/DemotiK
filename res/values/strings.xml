@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+
     <string name="app_name">DemotiK</string>
     <string name="led_name">Led controller</string>
     <string name="device_name">Device controller</string>
@@ -15,5 +16,9 @@
     <string name="wave_text">Wave toggle</string>
     <string name="wave_toggle">Wave</string>
     <string name="lightall_toggle">Light</string>
+    <string name="sono_text">Sono toggle</string>
+    <string name="sono_toggle">Sono</string>
+    <string name="screen_text">Screen toggle</string>
+    <string name="screen_toggle">Screen</string>
 
 </resources>

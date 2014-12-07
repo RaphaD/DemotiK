@@ -14,6 +14,31 @@
                 android:layout_height="wrap_content"
                 android:text="@string/device_name"/>
 
+        <TableLayout android:layout_width="wrap_content" android:layout_height="wrap_content">
+            <TableRow>
+                <TextView
+                        android:layout_height="wrap_content"
+                        android:layout_width="wrap_content"
+                        android:text="@string/screen_text"/>
+
+                <ToggleButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/screen_toggle"
+                        android:id="@+id/toggleScreen"/>
+            </TableRow>
+            <TableRow>
+                <TextView
+                        android:layout_height="wrap_content"
+                        android:layout_width="wrap_content"
+                        android:text="@string/sono_text"/>
+                <ToggleButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/sono_toggle"
+                        android:id="@+id/toggleSono"/>
+            </TableRow>
+        </TableLayout>
         <Button
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
