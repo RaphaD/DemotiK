@@ -1,83 +1,81 @@
 package raspberry.pi.DemotiK;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import raspberry.pi.DemotiK.abstractclass.AbstractView;
-import raspberry.pi.DemotiK.mainactivity.MainActivityController;
-import raspberry.pi.DemotiK.mainactivity.MainActivityModel;
+import raspberry.pi.DemotiK.activities.*;
 
-import java.util.Observable;
+public class MainActivity extends AbstractActivity {
 
-public class MainActivity extends AbstractView {
-
-    Button switchLED, switchConfig, switchDevices, switchTorrent;
+    Button mLedButton, mConfigButton, mTorrentButton, mDeviceButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.mainactivity_layout);
 
-        initUIFromR();
-
-        MainActivityController ctrl = new MainActivityController(this, new MainActivityModel());
-        ctrl.initKeys();
+        System.out.println("MainActivity onCreate");
+        initKeys();
+        addListeners();
     }
 
     @Override
-    protected void initUIFromR() {
-        switchLED = (Button) findViewById(R.id.led);
-        switchDevices = (Button) findViewById(R.id.relay);
-        switchTorrent = (Button) findViewById(R.id.torrent);
-        switchConfig = (Button) findViewById(R.id.config);
-
-    }
-
-    public void addOnClickListenerSwitchLed(View.OnClickListener listener) {
-        switchLED.setOnClickListener(listener);
-    }
-
-    public void addOnClickListenerSwitchDevices(View.OnClickListener listener) {
-        switchDevices.setOnClickListener(listener);
-    }
-
-    public void addOnClickListenerSwitchTorrent(View.OnClickListener listener) {
-        switchTorrent.setOnClickListener(listener);
-    }
-
-    public void addOnClickListenerSwitchConfig(View.OnClickListener listener) {
-        switchConfig.setOnClickListener(listener);
+    protected void initKeys() {
+        mLedButton = (Button) findViewById(R.id.led);
+        mConfigButton = (Button) findViewById(R.id.config);
+        mTorrentButton = (Button) findViewById(R.id.torrent);
+        mDeviceButton = (Button) findViewById(R.id.device);
+        mMenuButton = (Button) findViewById(R.id.menu);
     }
 
     @Override
-    public void update(Observable observable, Object data) {
-
+    protected void addListeners() {
+        mLedButton.setOnClickListener(new LedButtonListener());
+        mConfigButton.setOnClickListener(new ConfigButtonListener());
+        mTorrentButton.setOnClickListener(new TorrentButtonListener());
+        mDeviceButton.setOnClickListener(new DeviceButtonListener());
+        mMenuButton.setOnClickListener(new MenuButtonListener());
     }
 
-/*
-        m_web = new String[]{
-                getString(R.string.app_name),
-                getString(R.string.led_name),
-                getString(R.string.device_name),
-                getString(R.string.option_name)
-        };
+    @Override
+    protected void switchToMenu() {
+    }
 
-        m_imageId = new Integer[]{
-                R.drawable.image1,
-                R.drawable.image2,
-                R.drawable.image3,
-                R.drawable.image4
-        };
+    private class LedButtonListener implements View.OnClickListener {
 
-        CustomMenu adapter = new CustomMenu(MainActivity.this, this.m_web, this.m_imageId);
-        m_list = (ListView) findViewById(R.id.listView);
-        m_list.setAdapter(adapter);
-        m_list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view,
-                                    int position, long id) {
-                Toast.makeText(MainActivity.this, "You Clicked at " + m_web[+position], Toast.LENGTH_SHORT).show();
-            }
-        });
-*/
+        @Override
+        public void onClick(View v) {
+            Intent ledActivityIntent = new Intent(MainActivity.this, LedActivity.class);
+            startActivity(ledActivityIntent);
+        }
+    }
+
+    private class ConfigButtonListener implements View.OnClickListener {
+
+        @Override
+        public void onClick(View v) {
+            Intent configActivity = new Intent(MainActivity.this, ConfigActivity.class);
+            startActivity(configActivity);
+        }
+    }
+
+    private class TorrentButtonListener implements View.OnClickListener {
+
+        @Override
+        public void onClick(View v) {
+            Intent torrentActivity = new Intent(MainActivity.this, TorrentActivity.class);
+            startActivity(torrentActivity);
+        }
+    }
+
+    private class DeviceButtonListener implements View.OnClickListener {
+
+        @Override
+        public void onClick(View v) {
+            Intent deviceActivity = new Intent(MainActivity.this, DeviceActivity.class);
+            startActivity(deviceActivity);
+        }
+    }
+
 }

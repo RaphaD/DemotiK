@@ -15,6 +15,12 @@
                 android:layout_height="wrap_content"
                 android:text="@string/torrent_name"/>
 
+        <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/menu_button"
+                android:id="@+id/menuTorrent"/>
+
     </LinearLayout>
 
 </ScrollView>

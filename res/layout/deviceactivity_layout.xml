@@ -14,5 +14,11 @@
                 android:layout_height="wrap_content"
                 android:text="@string/device_name"/>
 
+        <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/menuDevice"
+                android:text="@string/menu_button"/>
+
     </LinearLayout>
 </ScrollView>

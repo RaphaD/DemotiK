@@ -5,4 +5,15 @@
     <string name="device_name">Device controller</string>
     <string name="torrent_name">Torrent controller</string>
     <string name="option_name">Options</string>
+    <string name="menu_button">Go to menu</string>
+    <string name="redval_text">Red value</string>
+    <string name="greenval_text">Green value</string>
+    <string name="blueval_text">Blue value</string>
+    <string name="lightall_text">Light all</string>
+    <string name="setter_text">LED setter</string>
+    <string name="functionalities_text">Other functionalities</string>
+    <string name="wave_text">Wave toggle</string>
+    <string name="wave_toggle">Wave</string>
+    <string name="lightall_toggle">Light</string>
+
 </resources>

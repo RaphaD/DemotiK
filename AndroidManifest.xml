@@ -12,5 +12,13 @@
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
+        <activity android:name=".activities.LedActivity">
+        </activity>
+        <activity android:name=".activities.DeviceActivity">
+        </activity>
+        <activity android:name=".activities.ConfigActivity">
+        </activity>
+        <activity android:name=".activities.TorrentActivity">
+        </activity>
     </application>
 </manifest> 
