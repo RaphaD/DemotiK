@@ -9,6 +9,8 @@ import android.widget.ToggleButton;
 import raspberry.pi.DemotiK.MainActivity;
 import raspberry.pi.DemotiK.R;
 
+import java.io.IOException;
+
 /**
  * Created by fums on 06.12.14.
  */
@@ -16,10 +18,6 @@ public class LedActivity extends AbstractActivity {
 
     SeekBar mRedSeekBar, mGreenSeekBar, mBlueSeekBar;
     ToggleButton mWaveToggle, mAllToggle;
-
-    public LedActivity() {
-
-    }
 
     @Override
     protected void onCreate(Bundle savedInstance) {
@@ -66,7 +64,12 @@ public class LedActivity extends AbstractActivity {
 
         @Override
         public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
-            System.out.println("current value : " + progress);
+            String toWrite = "red " + Integer.toString(progress);
+            try {
+                mSocket.writeInSocket(toWrite);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
         }
 
         @Override
@@ -82,7 +85,12 @@ public class LedActivity extends AbstractActivity {
 
         @Override
         public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
-            System.out.println("current value : " + progress);
+            String toWrite = "green " + Integer.toString(progress);
+            try {
+                mSocket.writeInSocket(toWrite);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
         }
 
         @Override
@@ -98,7 +106,12 @@ public class LedActivity extends AbstractActivity {
 
         @Override
         public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
-            System.out.println("current value : " + progress);
+            String toWrite = "blue " + Integer.toString(progress);
+            try {
+                mSocket.writeInSocket(toWrite);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
         }
 
         @Override
@@ -114,15 +127,34 @@ public class LedActivity extends AbstractActivity {
 
         @Override
         public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-            System.out.println("Wave : " + isChecked);
-        }
+            String toWrite = "wave ";
+            if(isChecked)
+                toWrite += "on";
+            else
+                toWrite += "off";
+            try {
+                mSocket.writeInSocket(toWrite);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+
+            }
     }
 
     private class AllClickListener implements CompoundButton.OnCheckedChangeListener {
 
         @Override
         public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-            System.out.println("All light : " + isChecked);
+            String toWrite = "all ";
+            if(isChecked)
+                toWrite += "on";
+            else
+                toWrite += "off";
+            try {
+                mSocket.writeInSocket(toWrite);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
         }
     }
 }

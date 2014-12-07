@@ -3,6 +3,7 @@ package raspberry.pi.DemotiK.activities;
 import android.app.Activity;
 import android.view.View;
 import android.widget.Button;
+import raspberry.pi.DemotiK.utilities.Network;
 
 /**
  * Created by fums on 06.12.14.
@@ -10,6 +11,7 @@ import android.widget.Button;
 public abstract class AbstractActivity extends Activity {
 
     protected Button mMenuButton;
+    protected static Network mSocket = new Network();
 
     protected abstract void initKeys();
 
