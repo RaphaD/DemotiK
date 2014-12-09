@@ -30,7 +30,6 @@ public class Network {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        System.out.println("socket " + socket);
     }
 
     public void writeInSocket(String toWrite) throws IOException {
@@ -42,5 +41,20 @@ public class Network {
     public String readFromSocket() throws IOException {
         BufferedReader inputStream = new BufferedReader(new InputStreamReader(socket.getInputStream()));
         return inputStream.readLine();
+    }
+
+    public void resetConnection() {
+        InetAddress server = null;
+        try {
+            server = InetAddress.getByName(mIpAdress);
+            System.out.println("server " + server);
+        } catch (UnknownHostException e) {
+            e.printStackTrace();
+        }
+        try {
+            socket = new Socket(server, mPort);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 }

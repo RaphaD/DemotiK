@@ -31,6 +31,7 @@ public class LedActivity extends AbstractActivity {
     @Override
     protected void initKeys() {
         mMenuButton = (Button) findViewById(R.id.menu_button);
+        mResetConnectionButton = (Button) findViewById(R.id.ledResetConnectionButton);
         mRedSeekBar = (SeekBar) findViewById(R.id.red_bar);
         mGreenSeekBar = (SeekBar) findViewById(R.id.green_bar);
         mBlueSeekBar = (SeekBar) findViewById(R.id.blue_bar);
@@ -52,6 +53,7 @@ public class LedActivity extends AbstractActivity {
         mAllToggle.setOnCheckedChangeListener(new AllClickListener());
 
         mMenuButton.setOnClickListener(new MenuButtonListener());
+        mResetConnectionButton.setOnClickListener(new ResetConnectionButtonListener());
     }
 
     @Override

@@ -29,6 +29,7 @@ public class DeviceActivity extends AbstractActivity {
     @Override
     protected void initKeys() {
         mMenuButton = (Button) findViewById(R.id.menuDevice);
+        mResetConnectionButton = (Button) findViewById(R.id.deviceResetButton);
         mSonoToggle = (ToggleButton) findViewById(R.id.toggleSono);
         mScreenToggle = (ToggleButton) findViewById(R.id.toggleScreen);
     }
@@ -36,6 +37,7 @@ public class DeviceActivity extends AbstractActivity {
     @Override
     protected void addListeners() {
         mMenuButton.setOnClickListener(new MenuButtonListener());
+        mResetConnectionButton.setOnClickListener(new ResetConnectionButtonListener());
         mSonoToggle.setOnCheckedChangeListener(new SonoToggleListener());
         mScreenToggle.setOnCheckedChangeListener(new ScreenToggleListener());
     }

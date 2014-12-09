@@ -10,7 +10,7 @@ import raspberry.pi.DemotiK.utilities.Network;
  */
 public abstract class AbstractActivity extends Activity {
 
-    protected Button mMenuButton;
+    protected Button mMenuButton, mResetConnectionButton;
     protected static Network mSocket = new Network();
 
     protected abstract void initKeys();
@@ -23,8 +23,15 @@ public abstract class AbstractActivity extends Activity {
 
         @Override
         public void onClick(View v) {
-            System.out.println("onClickListener MenuButtonListener");
             switchToMenu();
+        }
+    }
+
+    public class ResetConnectionButtonListener implements View.OnClickListener{
+
+        @Override
+        public void onClick(View v) {
+            mSocket.resetConnection();
         }
     }
 }

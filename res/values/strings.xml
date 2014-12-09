@@ -20,5 +20,6 @@
     <string name="sono_toggle">Sono</string>
     <string name="screen_text">Screen toggle</string>
     <string name="screen_toggle">Screen</string>
+    <string name="resetConnection_button">Reset connection</string>
 
 </resources>

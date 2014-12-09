@@ -39,6 +39,13 @@
                         android:id="@+id/toggleSono"/>
             </TableRow>
         </TableLayout>
+
+        <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/deviceResetButton"
+                android:text="@string/resetConnection_button"/>
+
         <Button
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
