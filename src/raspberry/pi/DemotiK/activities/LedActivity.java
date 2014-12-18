@@ -19,6 +19,9 @@ public class LedActivity extends AbstractActivity {
     SeekBar mRedSeekBar, mGreenSeekBar, mBlueSeekBar;
     ToggleButton mWaveToggle, mAllToggle;
 
+    public LedActivity(){
+    }
+
     @Override
     protected void onCreate(Bundle savedInstance) {
         super.onCreate(savedInstance);
@@ -80,6 +83,9 @@ public class LedActivity extends AbstractActivity {
 
         @Override
         public void onStopTrackingTouch(SeekBar seekBar) {
+            if(! mSocket.isInitialized()){
+                System.out.println("[Error - Network - writeInSocket] RED socket used uninitialized");
+            }
         }
     }
 
@@ -101,6 +107,9 @@ public class LedActivity extends AbstractActivity {
 
         @Override
         public void onStopTrackingTouch(SeekBar seekBar) {
+            if(! mSocket.isInitialized()){
+                System.out.println("[Error - Network - writeInSocket] GREEN socket used uninitialized");
+            }
         }
     }
 
@@ -122,6 +131,9 @@ public class LedActivity extends AbstractActivity {
 
         @Override
         public void onStopTrackingTouch(SeekBar seekBar) {
+            if(! mSocket.isInitialized()){
+                System.out.println("[Error - Network - writeInSocket] BLUE socket used uninitialized");
+            }
         }
     }
 
@@ -140,7 +152,7 @@ public class LedActivity extends AbstractActivity {
                 e.printStackTrace();
             }
 
-            }
+        }
     }
 
     private class AllClickListener implements CompoundButton.OnCheckedChangeListener {

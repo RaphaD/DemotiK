@@ -11,7 +11,15 @@ import raspberry.pi.DemotiK.utilities.Network;
 public abstract class AbstractActivity extends Activity {
 
     protected Button mMenuButton, mResetConnectionButton;
-    protected static Network mSocket = new Network();
+    protected static Network mSocket;
+
+    public AbstractActivity(){
+        try {
+            mSocket = new Network();
+        } catch (Exception e){
+            e.printStackTrace();
+        }
+    }
 
     protected abstract void initKeys();
 

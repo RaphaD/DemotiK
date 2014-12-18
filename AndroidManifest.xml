@@ -11,14 +11,18 @@
     </uses-permission>
 
     <application android:label="@string/app_name">
-        <activity android:name=".MainActivity"
-                  android:label="@string/app_name">
+        <activity
+                android:name=".MainActivity"
+                android:label="@string/app_name"
+                android:taskAffinity=".activities.LedActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
-        <activity android:name=".activities.LedActivity">
+        <activity
+                android:name=".activities.LedActivity"
+                android:taskAffinity=".MainActivity">
         </activity>
         <activity android:name=".activities.DeviceActivity">
         </activity>

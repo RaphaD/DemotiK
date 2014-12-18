@@ -21,5 +21,10 @@
     <string name="screen_text">Screen toggle</string>
     <string name="screen_toggle">Screen</string>
     <string name="resetConnection_button">Reset connection</string>
+    <string name="ipAdress_textView">Adresse IP du serveur : </string>
+    <string name="ipAdress_editText">Adresse IP</string>
+    <string name="port_textView">Numéro de port : </string>
+    <string name="port_editText">N° de port</string>
+    <string name="save">Sauvegarder</string>
 
 </resources>
