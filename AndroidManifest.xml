@@ -23,18 +23,22 @@
         </activity>
         <activity
                 android:name=".activities.LedActivity"
+                android:taskAffinity=".MainActivity"
                 android:launchMode="singleInstance">
         </activity>
         <activity
                 android:name=".activities.DeviceActivity"
+                android:taskAffinity=".MainActivity"
                 android:launchMode="singleInstance">
         </activity>
         <activity
                 android:name=".activities.ConfigActivity"
+                android:taskAffinity=".MainActivity"
                 android:launchMode="singleInstance">
         </activity>
         <activity
                 android:name=".activities.TorrentActivity"
+                android:taskAffinity=".MainActivity"
                 android:launchMode="singleInstance">
         </activity>
     </application>
