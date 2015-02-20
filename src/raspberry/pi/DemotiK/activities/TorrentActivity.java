@@ -11,6 +11,10 @@ import raspberry.pi.DemotiK.R;
  */
 public class TorrentActivity extends AbstractActivity {
 
+    public TorrentActivity() {
+        super();
+    }
+
     @Override
     protected void onCreate(Bundle savedInstance) {
         super.onCreate(savedInstance);

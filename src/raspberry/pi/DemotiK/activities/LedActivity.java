@@ -2,6 +2,7 @@ package raspberry.pi.DemotiK.activities;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.Button;
 import android.widget.CompoundButton;
 import android.widget.SeekBar;
@@ -19,13 +20,12 @@ public class LedActivity extends AbstractActivity {
     SeekBar mRedSeekBar, mGreenSeekBar, mBlueSeekBar;
     ToggleButton mWaveToggle, mAllToggle;
 
-    public LedActivity(){
-    }
-
     @Override
     protected void onCreate(Bundle savedInstance) {
         super.onCreate(savedInstance);
         setContentView(R.layout.ledactivity_layout);
+
+        initSocket();
 
         initKeys();
         addListeners();
@@ -84,7 +84,7 @@ public class LedActivity extends AbstractActivity {
         @Override
         public void onStopTrackingTouch(SeekBar seekBar) {
             if(! mSocket.isInitialized()){
-                System.out.println("[Error - Network - writeInSocket] RED socket used uninitialized");
+                Log.d("[Error - Network - writeInSocket]", "RED socket used uninitialized");
             }
         }
     }
@@ -108,7 +108,7 @@ public class LedActivity extends AbstractActivity {
         @Override
         public void onStopTrackingTouch(SeekBar seekBar) {
             if(! mSocket.isInitialized()){
-                System.out.println("[Error - Network - writeInSocket] GREEN socket used uninitialized");
+                Log.d("[Error - Network - writeInSocket]", "GREEN socket used uninitialized");
             }
         }
     }
@@ -132,7 +132,7 @@ public class LedActivity extends AbstractActivity {
         @Override
         public void onStopTrackingTouch(SeekBar seekBar) {
             if(! mSocket.isInitialized()){
-                System.out.println("[Error - Network - writeInSocket] BLUE socket used uninitialized");
+                Log.d("[Error - Network - writeInSocket]", "BLUE socket used uninitialized");
             }
         }
     }

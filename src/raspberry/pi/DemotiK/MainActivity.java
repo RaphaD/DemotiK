@@ -15,7 +15,8 @@ public class MainActivity extends AbstractActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.mainactivity_layout);
 
-        System.out.println("MainActivity onCreate");
+        super.initSocket();
+
         initKeys();
         addListeners();
     }
@@ -27,15 +28,16 @@ public class MainActivity extends AbstractActivity {
         mTorrentButton = (Button) findViewById(R.id.torrent);
         mDeviceButton = (Button) findViewById(R.id.device);
         mMenuButton = (Button) findViewById(R.id.menu);
+        mResetConnectionButton = (Button) findViewById(R.id.resetConnectionButton);
     }
 
     @Override
     protected void addListeners() {
+        super.addListeners();
         mLedButton.setOnClickListener(new LedButtonListener());
         mConfigButton.setOnClickListener(new ConfigButtonListener());
         mTorrentButton.setOnClickListener(new TorrentButtonListener());
         mDeviceButton.setOnClickListener(new DeviceButtonListener());
-        mMenuButton.setOnClickListener(new MenuButtonListener());
     }
 
     @Override

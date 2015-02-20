@@ -1,5 +1,7 @@
 package raspberry.pi.DemotiK.utilities;
 
+import android.util.Log;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -13,26 +15,29 @@ import java.net.UnknownHostException;
  */
 public class Network {
 
-    private final static int mPort = 9003;
-    private final static String mIpAdress = "10.0.0.65";
+    private int mPort;
+    private String mIpAddress;
     private Socket mSocket = null;
 
-    public Network() {
+    public Network(String IpAddress, int port) {
+        Log.d("[ ===== LOG ===== - Network]", "IpAddress " + IpAddress);
+        Log.d("[ ===== LOG ===== - Network]", "port " + port);
+        mIpAddress = IpAddress;
+        mPort = port;
         InetAddress server = null;
         try {
-            server = InetAddress.getByName(mIpAdress);
-            System.out.println("server " + server);
+            server = InetAddress.getByName(mIpAddress);
         } catch (UnknownHostException e) {
             e.printStackTrace();
         }
         try {
             mSocket = new Socket(server, mPort);
-            System.out.println("mSocket = ");
         } catch (IOException e) {
             e.printStackTrace();
         }
+        Log.d("[ ===== LOG ===== - Network]", "socket" + mSocket);
         if (mSocket == null)
-            System.out.println("[Error - Network - Nework] Socket not initialized !");
+            Log.d(null, "[Error - Network - Network] Socket not initialized !");
     }
 
     public void writeInSocket(String toWrite) throws IOException, NullPointerException {
@@ -40,7 +45,7 @@ public class Network {
             PrintStream outputStream = new PrintStream(mSocket.getOutputStream());
             outputStream.print(toWrite);
         } else {
-            System.out.println("[Error - Network - writeInSocket] socket not initialized !");
+            Log.d("[Error - Network - writeInSocket]", "socket not initialized !");
         }
     }
 
@@ -50,7 +55,7 @@ public class Network {
             BufferedReader inputStream = new BufferedReader(new InputStreamReader(mSocket.getInputStream()));
             toReturn = inputStream.readLine();
         } else {
-            System.out.println("[Error - Network - readInSocket] socket not initialized !");
+            Log.d("[Error - Network - readInSocket]", "socket not initialized !");
         }
         return toReturn;
     }
@@ -58,8 +63,8 @@ public class Network {
     public void resetConnection() {
         InetAddress server = null;
         try {
-            server = InetAddress.getByName(mIpAdress);
-            System.out.println("server " + server);
+            server = InetAddress.getByName(mIpAddress);
+            Log.d("[===== LOG ===== - ResetConnection]", "server " + server);
         } catch (UnknownHostException e) {
             e.printStackTrace();
         }

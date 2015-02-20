@@ -17,6 +17,10 @@ public class DeviceActivity extends AbstractActivity {
 
     ToggleButton mSonoToggle, mScreenToggle;
 
+    public DeviceActivity() {
+        super();
+    }
+
     @Override
     protected void onCreate(Bundle savedInstance) {
         super.onCreate(savedInstance);
