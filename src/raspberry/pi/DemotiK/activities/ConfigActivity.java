@@ -46,6 +46,7 @@ public class ConfigActivity extends AbstractActivity {
     @Override
     protected void addListeners() {
         this.mConfigSaveButton.setOnClickListener(new ConfigSaveButton());
+        this.mMenuButton.setOnClickListener(new MenuButtonListener());
     }
 
     @Override

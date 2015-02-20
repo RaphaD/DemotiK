@@ -20,8 +20,6 @@ public class Network {
     private Socket mSocket = null;
 
     public Network(String IpAddress, int port) {
-        Log.d("[ ===== LOG ===== - Network]", "IpAddress " + IpAddress);
-        Log.d("[ ===== LOG ===== - Network]", "port " + port);
         mIpAddress = IpAddress;
         mPort = port;
         InetAddress server = null;
@@ -35,7 +33,6 @@ public class Network {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        Log.d("[ ===== LOG ===== - Network]", "socket" + mSocket);
         if (mSocket == null)
             Log.d(null, "[Error - Network - Network] Socket not initialized !");
     }
@@ -64,7 +61,6 @@ public class Network {
         InetAddress server = null;
         try {
             server = InetAddress.getByName(mIpAddress);
-            Log.d("[===== LOG ===== - ResetConnection]", "server " + server);
         } catch (UnknownHostException e) {
             e.printStackTrace();
         }
