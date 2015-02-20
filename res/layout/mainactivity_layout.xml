@@ -16,37 +16,37 @@
                 android:text="@string/app_name"/>
 
         <Button
-                android:layout_width="wrap_content"
+                android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/led"
                 android:text="@string/led_name"/>
 
         <Button
-                android:layout_width="wrap_content"
+                android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/device"
                 android:text="@string/device_name"/>
 
         <Button
-                android:layout_width="wrap_content"
+                android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/torrent"
                 android:text="@string/torrent_name"/>
 
         <Button
-                android:layout_width="wrap_content"
+                android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/config"
                 android:text="@string/option_name"/>
 
         <Button
                 android:id="@+id/resetConnectionButton"
-                android:layout_width="wrap_content"
+                android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/resetConnection_button"/>
 
         <Button
-                android:layout_width="wrap_content"
+                android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/menu"
                 android:text="@string/menu_button"/>
