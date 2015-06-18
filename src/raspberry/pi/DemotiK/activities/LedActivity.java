@@ -69,7 +69,7 @@ public class LedActivity extends AbstractActivity {
 
         @Override
         public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
-            String toWrite = "red " + Integer.toString(progress);
+            String toWrite = "[raw_command] red " + Integer.toString(progress);
             try {
                 mSocket.writeInSocket(toWrite);
             } catch (IOException e) {
@@ -93,7 +93,7 @@ public class LedActivity extends AbstractActivity {
 
         @Override
         public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
-            String toWrite = "green " + Integer.toString(progress);
+            String toWrite = "[raw_command] green " + Integer.toString(progress);
             try {
                 mSocket.writeInSocket(toWrite);
             } catch (IOException e) {
@@ -117,7 +117,7 @@ public class LedActivity extends AbstractActivity {
 
         @Override
         public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
-            String toWrite = "blue " + Integer.toString(progress);
+            String toWrite = "[raw_command] blue " + Integer.toString(progress);
             try {
                 mSocket.writeInSocket(toWrite);
             } catch (IOException e) {
@@ -141,7 +141,7 @@ public class LedActivity extends AbstractActivity {
 
         @Override
         public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-            String toWrite = "wave ";
+            String toWrite = "[raw_command] wave ";
             if(isChecked)
                 toWrite += "on";
             else
@@ -159,7 +159,7 @@ public class LedActivity extends AbstractActivity {
 
         @Override
         public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-            String toWrite = "all ";
+            String toWrite = "[raw_command] all ";
             if(isChecked)
                 toWrite += "on";
             else

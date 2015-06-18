@@ -56,7 +56,7 @@ public class DeviceActivity extends AbstractActivity {
 
         @Override
         public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-            String toWrite = "sono ";
+            String toWrite = "[raw_command] sono ";
             if (isChecked)
                 toWrite += "on";
             else
@@ -73,7 +73,7 @@ public class DeviceActivity extends AbstractActivity {
 
         @Override
         public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-            String toWrite = "screen ";
+            String toWrite = "[raw_command] screen ";
             if (isChecked)
                 toWrite += "on";
             else

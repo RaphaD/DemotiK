@@ -9,8 +9,8 @@ import android.preference.PreferenceManager;
  */
 public class Preferences {
 
-    private final String DEFAULT_IP = "192.168.1.18";
-    private final int DEFAULT_PORT = 9003;
+    private final String DEFAULT_IP = "osmc";
+    private final int DEFAULT_PORT = 9004;
     private SharedPreferences prefs;
 
     public Preferences(Context context) {
