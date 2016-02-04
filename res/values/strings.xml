@@ -1,12 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-
     <string name="app_name">DemotiK</string>
+    <string name="voice_name">Voice Recon</string>
     <string name="led_name">Led controller</string>
     <string name="device_name">Device controller</string>
     <string name="torrent_name">Torrent controller</string>
     <string name="option_name">Options</string>
     <string name="menu_button">Go to menu</string>
+    <string name="input_VIAAC_text">Make VIAAC speak</string>
+    <string name="askViaac_editText">Ask VIAAC</string>
+    <string name="ask_button">Ask</string>
     <string name="redval_text">Red value</string>
     <string name="greenval_text">Green value</string>
     <string name="blueval_text">Blue value</string>
@@ -26,5 +29,12 @@
     <string name="port_textView">Numéro de port : </string>
     <string name="port_editText">N° de port</string>
     <string name="save">Sauvegarder</string>
+    <string name="dk_image">Image of DK</string>
+    <string name="line_image">Image of line</string>
+    <string name="led_image">Image of led</string>
+    <string name="device_image">Image of device</string>
+    <string name="option_image">Image of option</string>
+    <string name="reset_image">Image of reset</string>
+    <string name="menu_image">Image of menu</string>
 
 </resources>
