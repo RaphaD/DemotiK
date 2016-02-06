@@ -27,6 +27,7 @@ public class DeviceActivity extends AbstractActivity {
         setContentView(R.layout.deviceactivity_layout);
 
         initKeys();
+        connectToInit();
         addListeners();
     }
 
@@ -36,6 +37,11 @@ public class DeviceActivity extends AbstractActivity {
         mResetConnectionButton = (Button) findViewById(R.id.deviceResetButton);
         mSonoToggle = (ToggleButton) findViewById(R.id.toggleSono);
         mScreenToggle = (ToggleButton) findViewById(R.id.toggleScreen);
+    }
+
+    @Override
+    protected void connectToInit() {
+
     }
 
     @Override

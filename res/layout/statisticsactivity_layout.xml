@@ -10,12 +10,144 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-        <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceLarge"
-                android:text="@string/torrent_name" android:textColor="#195AFF"/>
+        <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+            <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/imageView4" android:background="@drawable/statistics_small"/>
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:text="@string/statistics_name"
+                    android:textColor="#195AFF" android:layout_gravity="center"/>
+        </LinearLayout>
 
+        <TableLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:layout_marginTop="10dp" android:layout_marginBottom="10dp"
+                android:layout_marginLeft="15dp">
+            <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+                <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="?android:attr/textAppearanceMedium"
+                        android:text="@string/domain_text"
+                        android:id="@+id/textView2" android:layout_column="0" android:textColor="#195AFF"
+                        android:textStyle="bold"/>
+                <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="?android:attr/textAppearanceMedium"
+                        android:text="@string/unknown_textView"
+                        android:id="@+id/domainSetTextView" android:layout_column="1" android:textColor="#195AFF"/>
+            </TableRow>
+            <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="?android:attr/textAppearanceMedium"
+                        android:text="@string/uptime_text"
+                        android:id="@+id/textView3" android:textColor="#195AFF" android:textStyle="bold"/>
+                <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="?android:attr/textAppearanceMedium"
+                        android:text="@string/unknown_textView"
+                        android:id="@+id/uptimeSetTextView" android:layout_column="1" android:textColor="#195AFF"/>
+            </TableRow>
+            <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="?android:attr/textAppearanceMedium"
+                        android:text="@string/cpuUsagePercent_text"
+                        android:id="@+id/textView4" android:textColor="#195AFF" android:textStyle="bold"/>
+                <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="?android:attr/textAppearanceMedium"
+                        android:text="@string/unknown_textView"
+                        android:id="@+id/cpuPercentSetTextView" android:layout_column="1" android:textColor="#195AFF"/>
+            </TableRow>
+            <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+                <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="?android:attr/textAppearanceMedium"
+                        android:text="@string/cpuUsage_text"
+                        android:id="@+id/textView8" android:textColor="#195AFF" android:textStyle="bold"/>
+                <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="?android:attr/textAppearanceMedium"
+                        android:text="@string/unknown_textView"
+                        android:id="@+id/cpuSetTextView" android:layout_column="1" android:textColor="#195AFF"/>
+            </TableRow>
+            <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="?android:attr/textAppearanceMedium"
+                        android:text="@string/memoryUsagePercent_text"
+                        android:id="@+id/textView5" android:textColor="#195AFF" android:textStyle="bold"/>
+                <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="?android:attr/textAppearanceMedium"
+                        android:text="@string/unknown_textView"
+                        android:id="@+id/memoryPercentSetTextView" android:layout_column="1"
+                        android:textColor="#195AFF"/>
+            </TableRow>
+            <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+                <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="?android:attr/textAppearanceMedium"
+                        android:text="@string/memoryUsage_text"
+                        android:id="@+id/textView7" android:textColor="#195AFF" android:textStyle="bold"/>
+                <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="?android:attr/textAppearanceMedium"
+                        android:text="@string/unknown_textView"
+                        android:id="@+id/memorySetTextView" android:layout_column="1" android:textColor="#195AFF"/>
+            </TableRow>
+            <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+                <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="?android:attr/textAppearanceMedium"
+                        android:text="@string/temperature_text"
+                        android:id="@+id/textView6" android:textColor="#195AFF" android:textStyle="bold"/>
+                <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="?android:attr/textAppearanceMedium"
+                        android:text="@string/unknown_textView"
+                        android:id="@+id/temperatureSetTextView" android:layout_column="1" android:textColor="#195AFF"/>
+            </TableRow>
+        </TableLayout>
         <Button
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"

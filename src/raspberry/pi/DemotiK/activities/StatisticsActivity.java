@@ -21,12 +21,18 @@ public class StatisticsActivity extends AbstractActivity {
         setContentView(R.layout.statisticsactivity_layout);
 
         initKeys();
+        connectToInit();
         addListeners();
     }
 
     @Override
     protected void initKeys() {
         mMenuButton = (Button) findViewById(R.id.statisticsMenuButton);
+    }
+
+    @Override
+    protected void connectToInit() {
+
     }
 
     @Override

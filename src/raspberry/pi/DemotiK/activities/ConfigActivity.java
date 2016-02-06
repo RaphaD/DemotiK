@@ -36,6 +36,10 @@ public class ConfigActivity extends AbstractActivity {
         editKeys();
     }
 
+    @Override
+    protected void connectToInit() {
+    }
+
     private void editKeys() {
         String ipAddress = (String) mPrefs.getValueAt(String.class, "IP_ADDRESS", mPrefs.getDEFAULT_IP());
         String port = Integer.toString((Integer) mPrefs.getValueAt(Integer.class, "PORT", mPrefs.getDEFAULT_PORT()));

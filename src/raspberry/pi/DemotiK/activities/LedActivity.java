@@ -28,6 +28,7 @@ public class LedActivity extends AbstractActivity {
         initSocket();
 
         initKeys();
+        connectToInit();
         addListeners();
     }
 
@@ -41,6 +42,11 @@ public class LedActivity extends AbstractActivity {
 
         mWaveToggle = (ToggleButton) findViewById(R.id.wave_toggle);
         mAllToggle = (ToggleButton) findViewById(R.id.all_toggle);
+    }
+
+    @Override
+    protected void connectToInit() {
+
     }
 
     @Override

@@ -17,6 +17,8 @@ public abstract class AbstractActivity extends Activity {
 
     protected abstract void initKeys();
 
+    protected abstract void connectToInit();
+
     protected abstract void switchToMenu();
 
     protected void addListeners() {

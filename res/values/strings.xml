@@ -38,5 +38,13 @@
     <string name="menu_image">Image of menu</string>
     <string name="devices_text">Devices setter</string>
     <string name="statistics_name">Statistics</string>
+    <string name="domain_text">Domain address :</string>
+    <string name="uptime_text">Uptime :</string>
+    <string name="cpuUsagePercent_text">CPU usage (%):</string>
+    <string name="cpuUsage_text">CPU usage :</string>
+    <string name="memoryUsagePercent_text">Memory usage (%):</string>
+    <string name="memoryUsage_text">Memory usage :</string>
+    <string name="temperature_text">Temperature (°C):</string>
+    <string name="unknown_textView">Unknown</string>
 
 </resources>
