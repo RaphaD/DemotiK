@@ -3,8 +3,7 @@
         xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
-        android:background="#FFFFFF"
->
+        android:background="#FFFFFF">
 
     <LinearLayout
             android:layout_width="fill_parent"
@@ -13,7 +12,8 @@
 
         <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent" android:gravity="center_horizontal">
+                android:layout_height="match_parent" android:gravity="center_horizontal"
+                android:layout_marginBottom="10dp">
             <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -23,64 +23,160 @@
                     android:textSize="32sp"
                     android:textColor="#195AFF"
                     android:gravity="center_horizontal"
-                    android:id="@+id/textView"
+                    android:id="@+id/appNameText"
                     android:layout_alignParentTop="true"
                     android:layout_alignParentRight="true"/>
             <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:id="@+id/imageView"
                     android:contentDescription="@string/dk_image"
                     android:background="@drawable/donkey_kong_small"
                     android:layout_centerVertical="true"
-                    android:layout_toLeftOf="@+id/textView"/>
+                    android:layout_toLeftOf="@+id/appNameText"/>
         </RelativeLayout>
         <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:contentDescription="@string/line_image"
-                android:background="@drawable/line" android:layout_gravity="center_horizontal"/>
-        <ImageButton
+                android:background="@drawable/line"
+                android:layout_gravity="center_horizontal"/>
+        <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginBottom="10dp">
+            <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/ledButton"
+                    android:gravity="center"
+                    android:background="@drawable/led_menu" android:layout_gravity="center"/>
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:text="@string/led_name"
+                    android:id="@+id/led_text"
+                    android:textColor="#195AFF"
+                    android:layout_gravity="center_vertical"/>
+        </LinearLayout>
+
+        <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginLeft="10dp"
+                android:layout_marginBottom="10dp">
+            <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/deviceButton"
+                    android:background="@drawable/screen_menu"/>
+            <TextView
+                    android:textColor="#195AFF"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:text="@string/device_name"
+                    android:id="@+id/device_text" android:layout_gravity="center_vertical"/>
+        </LinearLayout>
+
+        <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginLeft="10dp"
+                android:layout_marginBottom="10dp">
+            <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/statisticsButton"
+                    android:background="@drawable/statistics_menu"/>
+            <TextView
+                    android:textColor="#195AFF"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:text="@string/statistics_name"
+                    android:id="@+id/statistics_text"
+                    android:layout_gravity="center_vertical"/>
+        </LinearLayout>
+
+        <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginLeft="10dp"
+                android:layout_marginBottom="10dp">
+            <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/configButton"
+                    android:background="@drawable/options_menu"/>
+            <TextView
+                    android:textColor="#195AFF"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:text="@string/option_name"
+                    android:id="@+id/option_text" android:layout_gravity="center_vertical"/>
+        </LinearLayout>
+
+        <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginLeft="10dp"
+                android:layout_marginBottom="10dp">
+            <Button
+                    android:id="@+id/resetConnectionButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/redo_menu"/>
+            <TextView
+                    android:textColor="#195AFF"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:text="@string/resetConnection_button"
+                    android:id="@+id/resetConnection_text" android:layout_gravity="center_vertical"/>
+        </LinearLayout>
+
+        <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginLeft="10dp"
+                android:layout_marginBottom="10dp">
+            <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/menuMenuButton"
+                    android:background="@drawable/back_menu"/>
+            <TextView
+                    android:textColor="#195AFF"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:text="@string/menu_button"
+                    android:id="@+id/menu_text"
+                    android:layout_gravity="center_vertical"/>
+        </LinearLayout>
+
+        <TextView
+                android:textColor="#195AFF"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/led"
-                android:text="@string/led_name" android:src="@drawable/led"/>
-
-        <ImageButton
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/device"
-                android:text="@string/device_name"
-                android:src="@drawable/screen"/>
-
-        <ImageButton
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/torrent"
-                android:text="@string/torrent_name"/>
-
-        <ImageButton
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/config"
-                android:text="@string/option_name" android:src="@drawable/options"/>
-
-        <ImageButton
-                android:id="@+id/resetConnectionButton"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/resetConnection_button" android:src="@drawable/redo"/>
-
-        <ImageButton
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/menuMenu"
-                android:text="@string/menu_button" android:src="@drawable/back"/>
-
-        <TextView android:layout_width="wrap_content"
-                  android:layout_height="wrap_content"
-                  android:textAppearance="?android:attr/textAppearanceLarge"
-                  android:text="@string/input_VIAAC_text"/>
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="@string/input_VIAAC_text"/>
 
         <EditText android:id="@+id/viaacInput_editText"
                   android:layout_width="fill_parent"
@@ -88,7 +184,7 @@
                   android:text="@string/askViaac_editText"
                   android:inputType="textWebEditText"/>
 
-        <Button android:id="@+id/askViaac_button"
+        <Button android:id="@+id/askViaacButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/ask_button"/>

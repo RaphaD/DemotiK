@@ -9,16 +9,16 @@ import raspberry.pi.DemotiK.R;
 /**
  * Created by fums on 06.12.14.
  */
-public class TorrentActivity extends AbstractActivity {
+public class StatisticsActivity extends AbstractActivity {
 
-    public TorrentActivity() {
+    public StatisticsActivity() {
         super();
     }
 
     @Override
     protected void onCreate(Bundle savedInstance) {
         super.onCreate(savedInstance);
-        setContentView(R.layout.torrentactivity_layout);
+        setContentView(R.layout.statisticsactivity_layout);
 
         initKeys();
         addListeners();
@@ -26,7 +26,7 @@ public class TorrentActivity extends AbstractActivity {
 
     @Override
     protected void initKeys() {
-        mMenuButton = (Button) findViewById(R.id.menuTorrent);
+        mMenuButton = (Button) findViewById(R.id.statisticsMenuButton);
     }
 
     @Override
@@ -36,7 +36,7 @@ public class TorrentActivity extends AbstractActivity {
 
     @Override
     protected void switchToMenu() {
-        Intent mainActivity = new Intent(TorrentActivity.this, MainActivity.class);
+        Intent mainActivity = new Intent(StatisticsActivity.this, MainActivity.class);
         startActivity(mainActivity);
     }
 }

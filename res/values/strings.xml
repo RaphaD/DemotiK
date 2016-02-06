@@ -36,5 +36,7 @@
     <string name="option_image">Image of option</string>
     <string name="reset_image">Image of reset</string>
     <string name="menu_image">Image of menu</string>
+    <string name="devices_text">Devices setter</string>
+    <string name="statistics_name">Statistics</string>
 
 </resources>

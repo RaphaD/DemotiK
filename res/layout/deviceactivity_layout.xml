@@ -2,56 +2,77 @@
 
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:background="#FFFFFF">
 
     <LinearLayout
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-        <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceLarge"
-                android:text="@string/device_name"/>
+        <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:layout_gravity="center_horizontal">
+            <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/imageView2" android:background="@drawable/screen_small"/>
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:text="@string/device_name" android:textColor="#195AFF" android:layout_gravity="center"/>
+        </LinearLayout>
 
-        <TableLayout android:layout_width="wrap_content" android:layout_height="wrap_content">
-            <TableRow>
-                <TextView
-                        android:layout_height="wrap_content"
-                        android:layout_width="wrap_content"
-                        android:text="@string/screen_text"/>
+        <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" android:layout_marginLeft="15dp" android:layout_marginTop="10dp">
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:text="@string/devices_text"
+                    android:id="@+id/textView"
+                    android:textColor="#195AFF"/>
+            <TableLayout android:layout_width="wrap_content" android:layout_height="wrap_content"
+                         android:layout_marginTop="10dp" android:layout_marginBottom="10dp">
+                <TableRow>
+                    <TextView
+                            android:layout_height="wrap_content"
+                            android:layout_width="wrap_content"
+                            android:text="@string/screen_text" android:textColor="#195AFF"/>
 
-                <ToggleButton
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/screen_toggle"
-                        android:id="@+id/toggleScreen"/>
-            </TableRow>
-            <TableRow>
-                <TextView
-                        android:layout_height="wrap_content"
-                        android:layout_width="wrap_content"
-                        android:text="@string/sono_text"/>
-                <ToggleButton
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/sono_toggle"
-                        android:id="@+id/toggleSono"/>
-            </TableRow>
-        </TableLayout>
-
-        <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/deviceResetButton"
-                android:text="@string/resetConnection_button"/>
-
-        <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/menuDevice"
-                android:text="@string/menu_button"/>
+                    <ToggleButton
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/screen_toggle"
+                            android:id="@+id/toggleScreen" android:textColor="#195AFF"/>
+                </TableRow>
+                <TableRow>
+                    <TextView
+                            android:layout_height="wrap_content"
+                            android:layout_width="wrap_content"
+                            android:text="@string/sono_text" android:textColor="#195AFF"/>
+                    <ToggleButton
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/sono_toggle"
+                            android:id="@+id/toggleSono" android:textColor="#195AFF"/>
+                </TableRow>
+            </TableLayout>
+            <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/deviceResetButton"
+                    android:background="@drawable/redo_small"/>
+            <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/menuDevice"
+                    android:background="@drawable/back_small"/>
+        </LinearLayout>
 
     </LinearLayout>
 </ScrollView>

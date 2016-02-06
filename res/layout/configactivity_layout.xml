@@ -3,7 +3,7 @@
 <ScrollView
         xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="fill_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="fill_parent" android:background="#FFFFFF">
 
     <LinearLayout
             android:layout_width="fill_parent"
@@ -12,11 +12,20 @@
             android:layout_marginLeft="15dp"
             android:layout_marginRight="15dp">
 
-        <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceLarge"
-                android:text="@string/option_name"/>
+        <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+            <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/imageView3" android:background="@drawable/options_small"/>
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:text="@string/option_name" android:textColor="#195AFF" android:layout_gravity="center"/>
+        </LinearLayout>
 
         <LinearLayout
                 android:layout_width="fill_parent"
@@ -27,7 +36,7 @@
                     android:id="@+id/IP_text"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/ipAdress_textView"/>
+                    android:text="@string/ipAdress_textView" android:textColor="#195AFF"/>
 
             <EditText
                     android:id="@+id/ipAdress_editText"
@@ -46,7 +55,7 @@
             <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/port_textView"/>
+                    android:text="@string/port_textView" android:textColor="#195AFF"/>
 
             <EditText
                     android:id="@+id/port_editText"
@@ -61,13 +70,13 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/configSave_button"
-                android:text="@string/save"/>
+                android:background="@drawable/save_small"/>
 
         <Button
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/menuConfig"
-                android:text="@string/menu_button"/>
+                android:background="@drawable/back_small"/>
 
     </LinearLayout>
 

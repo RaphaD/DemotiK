@@ -14,7 +14,7 @@ import java.util.ArrayList;
 public class MainActivity extends AbstractActivity {
 
     static final int check = 69;
-    Button mVoiceButton, mLedButton, mConfigButton, mTorrentButton, mDeviceButton, mAskButton;
+    Button mVoiceButton, mLedButton, mConfigButton, mStatisticsButton, mDeviceButton, mAskButton;
     EditText mAskEditText;
 
     @Override
@@ -30,15 +30,15 @@ public class MainActivity extends AbstractActivity {
 
     @Override
     protected void initKeys() {
-        mLedButton = (Button) findViewById(R.id.led);
-        mConfigButton = (Button) findViewById(R.id.config);
-        mTorrentButton = (Button) findViewById(R.id.torrent);
-        mDeviceButton = (Button) findViewById(R.id.device);
-        mMenuButton = (Button) findViewById(R.id.menuMenu);
+        mLedButton = (Button) findViewById(R.id.ledButton);
+        mConfigButton = (Button) findViewById(R.id.configButton);
+        mDeviceButton = (Button) findViewById(R.id.deviceButton);
+        mMenuButton = (Button) findViewById(R.id.menuMenuButton);
         mResetConnectionButton = (Button) findViewById(R.id.resetConnectionButton);
+        mStatisticsButton = (Button) findViewById(R.id.statisticsButton);
 //        mVoiceButton = (Button) findViewById(R.id.voice);
         mAskEditText = (EditText) findViewById(R.id.viaacInput_editText);
-        mAskButton = (Button) findViewById(R.id.askViaac_button);
+        mAskButton = (Button) findViewById(R.id.askViaacButton);
     }
 
     @Override
@@ -47,7 +47,7 @@ public class MainActivity extends AbstractActivity {
 //        mVoiceButton.setOnClickListener(new VoiceButtonListener());
         mLedButton.setOnClickListener(new LedButtonListener());
         mConfigButton.setOnClickListener(new ConfigButtonListener());
-        mTorrentButton.setOnClickListener(new TorrentButtonListener());
+        mStatisticsButton.setOnClickListener(new StatisticsButtonListener());
         mDeviceButton.setOnClickListener(new DeviceButtonListener());
         mAskButton.setOnClickListener(new AskButtonListener());
     }
@@ -97,12 +97,12 @@ public class MainActivity extends AbstractActivity {
         }
     }
 
-    private class TorrentButtonListener implements View.OnClickListener {
+    private class StatisticsButtonListener implements View.OnClickListener {
 
         @Override
         public void onClick(View v) {
-            Intent torrentActivity = new Intent(MainActivity.this, TorrentActivity.class);
-            startActivity(torrentActivity);
+            Intent statisticsActivity = new Intent(MainActivity.this, StatisticsActivity.class);
+            startActivity(statisticsActivity);
         }
     }
 

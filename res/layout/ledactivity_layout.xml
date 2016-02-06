@@ -1,106 +1,142 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-            android:layout_height="wrap_content"
-            android:layout_width="fill_parent">
+            android:layout_height="fill_parent"
+            android:layout_width="fill_parent"
+            android:background="#FFFFFF">
     <LinearLayout
-            xmlns:android="http://schemas.android.com/apk/res/android"
             android:orientation="vertical"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="15dp"
-            android:layout_marginRight="15dp">
-        <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceLarge"
-                android:text="@string/led_name"/>
-
-        <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceMedium"
-                android:text="@string/setter_text"
-                android:id="@+id/setter_text"/>
-        <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceSmall"
-                android:text="@string/redval_text"
-                android:id="@+id/red_text"/>
-        <SeekBar
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/red_bar"/>
-        <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceSmall"
-                android:text="@string/greenval_text"
-                android:id="@+id/green_text"/>
-        <SeekBar
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/green_bar"/>
-        <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceSmall"
-                android:text="@string/blueval_text"
-                android:id="@+id/blue_text"/>
-        <SeekBar
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/blue_bar"/>
-        <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceMedium"
-                android:text="@string/functionalities_text"
-                android:id="@+id/functionalities_text"/>
-        <TableLayout
+            android:layout_height="wrap_content">
+        <LinearLayout
                 android:orientation="horizontal"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content">
-            <TableRow>
-
-                <TextView
-                        android:layout_height="wrap_content"
-                        android:layout_width="wrap_content"
-                        android:text="@string/lightall_text"
-                        android:layout_column="1"/>
-
-                <ToggleButton
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/lightall_toggle"
-                        android:id="@+id/all_toggle"
-                        android:layout_column="2"/>
-            </TableRow>
-            <TableRow>
-                <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/wave_text"
-                        android:layout_column="1"/>
-
-                <ToggleButton
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/wave_toggle"
-                        android:id="@+id/wave_toggle"
-                        android:layout_column="2"/>
-            </TableRow>
-        </TableLayout>
-        <Button
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/ledResetConnectionButton"
-                android:text="@string/resetConnection_button"/>
-        <Button
-                android:layout_width="wrap_content"
+                android:layout_gravity="center_horizontal">
+
+            <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/imageView"
+                    android:background="@drawable/led_small"
+                    android:contentDescription="@string/led_image"/>
+
+            <TextView
+                    android:textColor="#195AFF"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:text="@string/led_name"
+                    android:layout_gravity="center"/>
+        </LinearLayout>
+        <LinearLayout
+                xmlns:android="http://schemas.android.com/apk/res/android"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/menu_button"
-                android:text="@string/menu_button"/>
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp">
+
+            <TextView
+                    android:textColor="#195AFF"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:text="@string/setter_text"
+                    android:id="@+id/setter_text"/>
+            <TextView
+                    android:textColor="#195AFF"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:text="@string/redval_text"
+                    android:id="@+id/red_text"/>
+            <SeekBar
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/red_bar"
+                    android:indeterminate="false"/>
+            <TextView
+                    android:textColor="#195AFF"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:text="@string/greenval_text"
+                    android:id="@+id/green_text"/>
+            <SeekBar
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/green_bar"/>
+            <TextView
+                    android:textColor="#195AFF"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:text="@string/blueval_text"
+                    android:id="@+id/blue_text"/>
+            <SeekBar
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/blue_bar"/>
+            <TextView
+                    android:textColor="#195AFF"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:text="@string/functionalities_text"
+                    android:id="@+id/functionalities_text"/>
+
+            <TableLayout
+                    android:orientation="horizontal"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content">
+
+                <TableRow>
+
+                    <TextView
+                            android:textColor="#195AFF"
+                            android:layout_height="wrap_content"
+                            android:layout_width="wrap_content"
+                            android:text="@string/lightall_text"
+                            android:layout_column="1"/>
+
+                    <ToggleButton
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/lightall_toggle"
+                            android:id="@+id/all_toggle"
+                            android:layout_column="2" android:textColor="#195AFF"/>
+                </TableRow>
+
+                <TableRow>
+
+                    <TextView
+                            android:textColor="#195AFF"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/wave_text"
+                            android:layout_column="1"/>
+
+                    <ToggleButton
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/wave_toggle"
+                            android:id="@+id/wave_toggle"
+                            android:layout_column="2" android:textColor="#195AFF"/>
+                </TableRow>
+            </TableLayout>
+
+            <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/ledResetConnectionButton"
+                    android:background="@drawable/redo_small"/>
+
+            <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/menu_button"
+                    android:background="@drawable/back_small"/>
+        </LinearLayout>
     </LinearLayout>
 </ScrollView>
