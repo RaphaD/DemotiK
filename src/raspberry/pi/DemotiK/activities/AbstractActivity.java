@@ -12,6 +12,8 @@ import raspberry.pi.DemotiK.utilities.Preferences;
 public abstract class AbstractActivity extends Activity {
 
     protected static Network mSocket;
+    protected final String FLAG_RAW_COMMAND = "[raw_command]";
+    protected final String FLAG_GET_STATE = "[get_state]";
     protected Button mMenuButton, mResetConnectionButton;
     protected Preferences mPrefs;
 

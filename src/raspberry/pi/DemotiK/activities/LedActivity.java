@@ -25,8 +25,6 @@ public class LedActivity extends AbstractActivity {
         super.onCreate(savedInstance);
         setContentView(R.layout.ledactivity_layout);
 
-        initSocket();
-
         initKeys();
         connectToInit();
         addListeners();
@@ -37,8 +35,11 @@ public class LedActivity extends AbstractActivity {
         mMenuButton = (Button) findViewById(R.id.menu_button);
         mResetConnectionButton = (Button) findViewById(R.id.ledResetConnectionButton);
         mRedSeekBar = (SeekBar) findViewById(R.id.red_bar);
+        mRedSeekBar.setMax(255);
         mGreenSeekBar = (SeekBar) findViewById(R.id.green_bar);
+        mGreenSeekBar.setMax(255);
         mBlueSeekBar = (SeekBar) findViewById(R.id.blue_bar);
+        mBlueSeekBar.setMax(255);
 
         mWaveToggle = (ToggleButton) findViewById(R.id.wave_toggle);
         mAllToggle = (ToggleButton) findViewById(R.id.all_toggle);
@@ -46,17 +47,42 @@ public class LedActivity extends AbstractActivity {
 
     @Override
     protected void connectToInit() {
+        try {
+            mSocket.writeInSocket(FLAG_GET_STATE + " red");
+            int redValue = Integer.parseInt(mSocket.readFromSocket());
+            mRedSeekBar.setProgress(redValue);
 
+            mSocket.writeInSocket(FLAG_GET_STATE + " green");
+            int greenValue = Integer.parseInt(mSocket.readFromSocket());
+            mGreenSeekBar.setProgress(greenValue);
+
+            mSocket.writeInSocket(FLAG_GET_STATE + " blue");
+            int blueValue = Integer.parseInt(mSocket.readFromSocket());
+            mBlueSeekBar.setProgress(blueValue);
+
+            mSocket.writeInSocket(FLAG_GET_STATE + " all");
+            String allValue = mSocket.readFromSocket();
+            if (allValue.equals("1"))
+                mAllToggle.setChecked(true);
+            else
+                mAllToggle.setChecked(false);
+
+            mSocket.writeInSocket((FLAG_GET_STATE + " wave"));
+            String waveValue = mSocket.readFromSocket();
+            if (waveValue.equals("1"))
+                mWaveToggle.setChecked(true);
+            else
+                mWaveToggle.setChecked(false);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     @Override
     protected void addListeners() {
         mRedSeekBar.setOnSeekBarChangeListener(new RedBarSeekListener());
-        mRedSeekBar.setMax(255);
         mGreenSeekBar.setOnSeekBarChangeListener(new GreenBarSeekListener());
-        mGreenSeekBar.setMax(255);
         mBlueSeekBar.setOnSeekBarChangeListener(new BlueBarSeekListener());
-        mBlueSeekBar.setMax(255);
 
         mWaveToggle.setOnCheckedChangeListener(new WaveClickListener());
         mAllToggle.setOnCheckedChangeListener(new AllClickListener());
@@ -75,7 +101,7 @@ public class LedActivity extends AbstractActivity {
 
         @Override
         public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
-            String toWrite = "[raw_command] red " + Integer.toString(progress);
+            String toWrite = FLAG_RAW_COMMAND + " red " + Integer.toString(progress);
             try {
                 mSocket.writeInSocket(toWrite);
             } catch (IOException e) {
@@ -99,7 +125,7 @@ public class LedActivity extends AbstractActivity {
 
         @Override
         public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
-            String toWrite = "[raw_command] green " + Integer.toString(progress);
+            String toWrite = FLAG_RAW_COMMAND + " green " + Integer.toString(progress);
             try {
                 mSocket.writeInSocket(toWrite);
             } catch (IOException e) {
@@ -123,7 +149,7 @@ public class LedActivity extends AbstractActivity {
 
         @Override
         public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
-            String toWrite = "[raw_command] blue " + Integer.toString(progress);
+            String toWrite = FLAG_RAW_COMMAND + " blue " + Integer.toString(progress);
             try {
                 mSocket.writeInSocket(toWrite);
             } catch (IOException e) {
@@ -147,11 +173,11 @@ public class LedActivity extends AbstractActivity {
 
         @Override
         public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-            String toWrite = "[raw_command] wave ";
+            String toWrite = FLAG_RAW_COMMAND + " wave ";
             if(isChecked)
-                toWrite += "on";
+                toWrite += "1";
             else
-                toWrite += "off";
+                toWrite += "0";
             try {
                 mSocket.writeInSocket(toWrite);
             } catch (IOException e) {
@@ -165,11 +191,11 @@ public class LedActivity extends AbstractActivity {
 
         @Override
         public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-            String toWrite = "[raw_command] all ";
+            String toWrite = FLAG_RAW_COMMAND + " all ";
             if(isChecked)
-                toWrite += "on";
+                toWrite += "1";
             else
-                toWrite += "off";
+                toWrite += "0";
             try {
                 mSocket.writeInSocket(toWrite);
             } catch (IOException e) {

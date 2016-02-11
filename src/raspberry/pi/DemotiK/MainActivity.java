@@ -42,6 +42,10 @@ public class MainActivity extends AbstractActivity {
     }
 
     @Override
+    protected void connectToInit() {
+    }
+
+    @Override
     protected void addListeners() {
         super.addListeners();
 //        mVoiceButton.setOnClickListener(new VoiceButtonListener());
