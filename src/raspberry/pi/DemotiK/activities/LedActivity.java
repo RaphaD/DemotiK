@@ -117,6 +117,13 @@ public class LedActivity extends AbstractActivity {
         public void onStopTrackingTouch(SeekBar seekBar) {
             if(! mSocket.isInitialized()){
                 Log.d("[Error - Network - writeInSocket]", "RED socket used uninitialized");
+            } else {
+                String toSave = FLAG_SET_STATE_RAW_COMMAND + " red " + Integer.toString(seekBar.getProgress());
+                try {
+                    mSocket.writeInSocket(toSave);
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
             }
         }
     }
@@ -141,6 +148,13 @@ public class LedActivity extends AbstractActivity {
         public void onStopTrackingTouch(SeekBar seekBar) {
             if(! mSocket.isInitialized()){
                 Log.d("[Error - Network - writeInSocket]", "GREEN socket used uninitialized");
+            } else {
+                String toSave = FLAG_SET_STATE_RAW_COMMAND + " green " + Integer.toString(seekBar.getProgress());
+                try {
+                    mSocket.writeInSocket(toSave);
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
             }
         }
     }
@@ -165,6 +179,13 @@ public class LedActivity extends AbstractActivity {
         public void onStopTrackingTouch(SeekBar seekBar) {
             if(! mSocket.isInitialized()){
                 Log.d("[Error - Network - writeInSocket]", "BLUE socket used uninitialized");
+            } else {
+                String toSave = FLAG_SET_STATE_RAW_COMMAND + " blue " + Integer.toString(seekBar.getProgress());
+                try {
+                    mSocket.writeInSocket(toSave);
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
             }
         }
     }
@@ -173,7 +194,7 @@ public class LedActivity extends AbstractActivity {
 
         @Override
         public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-            String toWrite = FLAG_RAW_COMMAND + " wave ";
+            String toWrite = FLAG_SET_STATE_RAW_COMMAND + " wave ";
             if(isChecked)
                 toWrite += "1";
             else
@@ -191,7 +212,7 @@ public class LedActivity extends AbstractActivity {
 
         @Override
         public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-            String toWrite = FLAG_RAW_COMMAND + " all ";
+            String toWrite = FLAG_SET_STATE_RAW_COMMAND + " all ";
             if(isChecked)
                 toWrite += "1";
             else

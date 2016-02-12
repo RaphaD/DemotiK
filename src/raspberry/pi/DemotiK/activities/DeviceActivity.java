@@ -42,14 +42,14 @@ public class DeviceActivity extends AbstractActivity {
     @Override
     protected void connectToInit() {
         try {
-            mSocket.writeInSocket(FLAG_GET_STATE + " sono");
+            mSocket.writeInSocket(FLAG_SET_STATE_RAW_COMMAND + " sono");
             String sonoValue = mSocket.readFromSocket();
             if (sonoValue.equals("1"))
                 mSonoToggle.setChecked(true);
             else
                 mSonoToggle.setChecked(false);
 
-            mSocket.writeInSocket(FLAG_GET_STATE + " screen");
+            mSocket.writeInSocket(FLAG_SET_STATE_RAW_COMMAND + " screen");
             String screenValue = mSocket.readFromSocket();
             if (screenValue.equals("1"))
                 mScreenToggle.setChecked(true);
@@ -78,7 +78,7 @@ public class DeviceActivity extends AbstractActivity {
 
         @Override
         public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-            String toWrite = FLAG_RAW_COMMAND + " sono ";
+            String toWrite = FLAG_SET_STATE_RAW_COMMAND + " sono ";
             if (isChecked)
                 toWrite += "1";
             else
@@ -95,7 +95,7 @@ public class DeviceActivity extends AbstractActivity {
 
         @Override
         public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-            String toWrite = FLAG_RAW_COMMAND + " screen ";
+            String toWrite = FLAG_SET_STATE_RAW_COMMAND + " screen ";
             if (isChecked)
                 toWrite += "1";
             else
