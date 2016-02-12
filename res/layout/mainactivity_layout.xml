@@ -127,50 +127,50 @@
                     android:text="@string/option_name"
                     android:id="@+id/option_text" android:layout_gravity="center_vertical"/>
         </LinearLayout>
+        <!--
+                <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginBottom="10dp">
+                    <Button
+                            android:id="@+id/resetConnectionButton"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/redo_menu"/>
+                    <TextView
+                            android:textColor="#195AFF"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textAppearance="?android:attr/textAppearanceLarge"
+                            android:text="@string/resetConnection_button"
+                            android:id="@+id/resetConnection_text" android:layout_gravity="center_vertical"/>
+                </LinearLayout>
 
-        <LinearLayout
-                android:orientation="horizontal"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:layout_marginLeft="10dp"
-                android:layout_marginBottom="10dp">
-            <Button
-                    android:id="@+id/resetConnectionButton"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:background="@drawable/redo_menu"/>
-            <TextView
-                    android:textColor="#195AFF"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textAppearance="?android:attr/textAppearanceLarge"
-                    android:text="@string/resetConnection_button"
-                    android:id="@+id/resetConnection_text" android:layout_gravity="center_vertical"/>
-        </LinearLayout>
-
-        <LinearLayout
-                android:orientation="horizontal"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:layout_marginLeft="10dp"
-                android:layout_marginBottom="10dp">
-            <Button
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/menuMenuButton"
-                    android:background="@drawable/back_menu"/>
-            <TextView
-                    android:textColor="#195AFF"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textAppearance="?android:attr/textAppearanceLarge"
-                    android:text="@string/menu_button"
-                    android:id="@+id/menu_text"
-                    android:layout_gravity="center_vertical"/>
-        </LinearLayout>
-
+                <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginBottom="10dp">
+                    <Button
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/menuMenuButton"
+                            android:background="@drawable/back_menu"/>
+                    <TextView
+                            android:textColor="#195AFF"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textAppearance="?android:attr/textAppearanceLarge"
+                            android:text="@string/menu_button"
+                            android:id="@+id/menu_text"
+                            android:layout_gravity="center_vertical"/>
+                </LinearLayout>
+        -->
         <TextView
                 android:textColor="#195AFF"
                 android:layout_width="wrap_content"

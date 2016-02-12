@@ -33,8 +33,8 @@ public class MainActivity extends AbstractActivity {
         mLedButton = (Button) findViewById(R.id.ledButton);
         mConfigButton = (Button) findViewById(R.id.configButton);
         mDeviceButton = (Button) findViewById(R.id.deviceButton);
-        mMenuButton = (Button) findViewById(R.id.menuMenuButton);
-        mResetConnectionButton = (Button) findViewById(R.id.resetConnectionButton);
+//        mMenuButton = (Button) findViewById(R.id.menuMenuButton);
+//        mResetConnectionButton = (Button) findViewById(R.id.resetConnectionButton);
         mStatisticsButton = (Button) findViewById(R.id.statisticsButton);
 //        mVoiceButton = (Button) findViewById(R.id.voice);
         mAskEditText = (EditText) findViewById(R.id.viaacInput_editText);
@@ -47,7 +47,7 @@ public class MainActivity extends AbstractActivity {
 
     @Override
     protected void addListeners() {
-        super.addListeners();
+//        super.addListeners();
 //        mVoiceButton.setOnClickListener(new VoiceButtonListener());
         mLedButton.setOnClickListener(new LedButtonListener());
         mConfigButton.setOnClickListener(new ConfigButtonListener());
